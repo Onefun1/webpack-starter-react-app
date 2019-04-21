@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "webpack -p",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Maksymenko Maksym",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.0",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^2.26.0",
     "node-sass": "^4.4.0",
     "react": "^16.8.6",
