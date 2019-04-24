@@ -248,9 +248,17 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     } = this.state;
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
       className: "container"
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, " ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+      className: "fas fa-apple-alt fa-3x"
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+      className: "fas fa-apple-alt fa-6x"
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
       className: "fas fa-apple-alt fa-9x"
-    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+      className: "fas fa-apple-alt fa-6x"
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+      className: "fas fa-apple-alt fa-3x"
+    })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
       className: "pulse"
     }, "Shopping list"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
       ref: input => {
