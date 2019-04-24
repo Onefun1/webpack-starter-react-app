@@ -43,6 +43,20 @@ export class App extends Component {
     this.setState({
       buyItems: [...newBuyItems]
     });
+
+    if (newBuyItems.length === 0) {
+      this.setState({
+        message: "No items on your list, add some."
+      });
+    }
+  }
+
+  clearAll(event) {
+    const target = event.target;
+    this.setState({
+      buyItems: [],
+      message: "No items on your list, add some."
+    });
   }
 
   render() {
@@ -79,40 +93,55 @@ export class App extends Component {
           </form>
         </header>
         <div className="content">
-          {message !== "" && (
+          {(message !== "" || buyItems.length === 0) && (
             <p className="message text-danger">
               <strong>{message}</strong>
             </p>
           )}
-          <table className="table">
-            <caption>Shopping list</caption>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Item</th>
-                <th className="text-right">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {buyItems.map((item, index) => {
-                return (
-                  <tr key={item}>
-                    <th scope="row">{index + 1}</th>
-                    <td>{item}</td>
-                    <td className="text-right">
-                      <button
-                        onClick={event => this.removeItem(item)}
-                        type="button"
-                        className="btn btn-outline-danger btn-sm"
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {buyItems.length > 0 && (
+            <table className="table">
+              {/* <caption>Shopping list</caption> */}
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Item</th>
+                  <th className="text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {buyItems.map((item, index) => {
+                  return (
+                    <tr key={item}>
+                      <th scope="row">{index + 1}</th>
+                      <td>{item}</td>
+                      <td className="text-right">
+                        <button
+                          onClick={event => this.removeItem(item)}
+                          type="button"
+                          className="btn btn-outline-danger btn-sm"
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="2">&nbsp;</td>
+                  <td className="text-right">
+                    <button
+                      onClick={e => this.clearAll(e)}
+                      className="btn btn-default btn-sm"
+                    >
+                      Clear list
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          )}
         </div>
       </div>
     );
