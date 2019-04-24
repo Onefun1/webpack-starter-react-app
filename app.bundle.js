@@ -225,6 +225,20 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     this.setState({
       buyItems: [...newBuyItems]
     });
+
+    if (newBuyItems.length === 0) {
+      this.setState({
+        message: "No items on your list, add some."
+      });
+    }
+  }
+
+  clearAll(event) {
+    const target = event.target;
+    this.setState({
+      buyItems: [],
+      message: "No items on your list, add some."
+    });
   }
 
   render() {
@@ -262,11 +276,11 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       className: "btn btn-primary"
     }, "Add"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
       className: "content"
-    }, message !== "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+    }, (message !== "" || buyItems.length === 0) && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       className: "message text-danger"
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, message)), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("table", {
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, message)), buyItems.length > 0 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("table", {
       className: "table"
-    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("caption", null, "Shopping list"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("thead", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tr", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "#"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "Item"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", {
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("thead", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tr", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "#"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "Item"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", {
       className: "text-right"
     }, "Action"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tbody", null, buyItems.map((item, index) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tr", {
@@ -280,7 +294,14 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         type: "button",
         className: "btn btn-outline-danger btn-sm"
       }, "Remove")));
-    })))));
+    })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tfoot", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tr", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("td", {
+      colSpan: "2"
+    }, "\xA0"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("td", {
+      className: "text-right"
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+      onClick: e => this.clearAll(e),
+      className: "btn btn-default btn-sm"
+    }, "Clear list")))))));
   }
 
 }
