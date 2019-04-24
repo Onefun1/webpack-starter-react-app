@@ -64,7 +64,14 @@ export class App extends Component {
     return (
       <div className="container">
         <header>
-          <i className="fas fa-apple-alt fa-9x" />
+          <div>
+            {" "}
+            <i className="fas fa-apple-alt fa-3x" />
+            <i className="fas fa-apple-alt fa-6x" />
+            <i className="fas fa-apple-alt fa-9x" />
+            <i className="fas fa-apple-alt fa-6x" />
+            <i className="fas fa-apple-alt fa-3x" />
+          </div>
           <h1 className="pulse">Shopping list</h1>
           <form
             ref={input => {
