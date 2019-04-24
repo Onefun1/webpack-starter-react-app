@@ -51,7 +51,7 @@ export class App extends Component {
       <div className="container">
         <header>
           <i className="fas fa-apple-alt fa-9x" />
-          <h1>Shopping list</h1>
+          <h1 className="pulse">Shopping list</h1>
           <form
             ref={input => {
               this.addForm = input;
@@ -79,7 +79,11 @@ export class App extends Component {
           </form>
         </header>
         <div className="content">
-          {message !== "" && <p className="message text-danger">{message}</p>}
+          {message !== "" && (
+            <p className="message text-danger">
+              <strong>{message}</strong>
+            </p>
+          )}
           <table className="table">
             <caption>Shopping list</caption>
             <thead>
