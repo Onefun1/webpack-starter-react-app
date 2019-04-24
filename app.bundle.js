@@ -236,7 +236,9 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       className: "container"
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("header", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
       className: "fas fa-apple-alt fa-9x"
-    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", null, "Shopping list"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
+    }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h1", {
+      className: "pulse"
+    }, "Shopping list"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
       ref: input => {
         this.addForm = input;
       },
@@ -262,7 +264,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       className: "content"
     }, message !== "" && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
       className: "message text-danger"
-    }, message), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("table", {
+    }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("strong", null, message)), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("table", {
       className: "table"
     }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("caption", null, "Shopping list"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("thead", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("tr", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "#"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", null, "Item"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("th", {
       className: "text-right"
